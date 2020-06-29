@@ -79,26 +79,28 @@ public class MainActivity extends AppCompatActivity {
         SimpleDateFormat myFormat = new SimpleDateFormat("HH:mm:ss");
         calendar.setTime(today);
         try {
-            if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY) {
-                then = myFormat.parse("16:20:00");
-            }
-            if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.TUESDAY) {
-                then = myFormat.parse("14:00:00");
-            }
-            if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.WEDNESDAY) {
-                then = myFormat.parse("14:00:00");
-            }
-            if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.THURSDAY) {
-                then = myFormat.parse("14:00:00");
-            }
-            if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY) {
-                then = myFormat.parse("12:10:00");
-            }
-            if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
-                then = myFormat.parse("23:59:59");
-            }
-            if (calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY) {
-                then = myFormat.parse("23:59:59");
+            switch(calendar.get(Calendar.DAY_OF_WEEK)){
+                case Calendar.MONDAY:
+                    then = myFormat.parse("16:20:00");
+                    break;
+                case Calendar.TUESDAY:
+                    then = myFormat.parse("14:00:00");
+                    break;
+                case Calendar.WEDNESDAY:
+                    then = myFormat.parse("14:00:00");
+                    break;
+                case Calendar.THURSDAY:
+                    then = myFormat.parse("14:00:00");
+                    break;
+                case Calendar.FRIDAY:
+                    then = myFormat.parse("14:00:00");
+                    break;
+                case Calendar.SATURDAY:
+                    then = myFormat.parse("23:59:59");
+                    break;
+                case Calendar.SUNDAY:
+                    then = myFormat.parse("23:59:59");
+                    break;
             }
         } catch (Exception e) {
             System.out.println("fucked up EndTime");
